@@ -1,0 +1,60 @@
+
+span.imageTile {
+    display: inline-block;
+    position: relative;
+    img.deleteButton {
+        display: none;
+      }
+    
+      &:hover {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    
+        img.deleteButton {
+          z-index: 999;
+          position: absolute;
+          display: block;
+          left: 90%;
+          top: 2%;
+          background-image: url(../../svg/close.svg);
+          background-repeat: no-repeat;
+        }
+      }
+}
+.imageContainer {
+  /* Prevent vertical gaps */
+  line-height: 0;
+
+  -webkit-column-count: 5;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 5;
+  -moz-column-gap: 0px;
+  column-count: 5;
+  column-gap: 10px;
+
+  @media (max-width: 1200px) {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+  }
+  @media (max-width: 1000px) {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+  @media (max-width: 800px) {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+  @media (max-width: 400px) {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+
+  img.userImage {
+    /* Just in case there are inline attributes */
+    width: 100% !important;
+    height: auto !important;
+  }
+}

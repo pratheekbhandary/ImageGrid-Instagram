@@ -1,0 +1,39 @@
+.imageContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+  .imageTile {
+    background-color: gray;
+    position : relative;
+    align-self: center;
+    width: 380px;
+    min-height: 300px;
+    box-sizing: border-box;
+    margin: 0.5em;
+    font-weight: 600;
+    padding: 0.5em;
+
+    img.userImage {
+      width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+
+    img.deleteButton {
+      display: none;
+    }
+    &:hover {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+      img.deleteButton {
+        position: absolute;
+        display: block;
+        left: 90%;
+        top: 2%;
+        background-image: url(../../svg/close.svg);
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

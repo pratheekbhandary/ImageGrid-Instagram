@@ -1,26 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, Fragment } from "react";
 
+import UserImages from "./utils";
+import Header from "./component/Header";
+import ImageGrid from "./container/ImageGrid";
+
+import "./main.scss";
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { images: [] };
+  }
+
+  componentDidMount() {
+    UserImages.getUserImages().then(imagesArr => {
+      console.log(imagesArr);
+      this.setState({ images: new UserImages(imagesArr).images });
+    });
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Fragment>
+        <Header />
+        <div className="container">
+          <ImageGrid imagesArray={this.state.images} />
+        </div>
+      </Fragment>
     );
   }
 }
