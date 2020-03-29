@@ -1,4 +1,4 @@
-#ImageGrid is a Instagram clone
+# ImageGrid is a Instagram clone
 
 This is a weekend project that helped me explore more styling with SCSS. 
 
